@@ -1,4 +1,4 @@
-//Creating a EC2 instance
+Creating a EC2 instance
 For demo purpose here, we selected a Ubuntu OS as the VM with free tier eligibility
 
 //Install git if not already installed with "sudo apt install git"
