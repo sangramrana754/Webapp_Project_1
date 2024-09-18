@@ -12,7 +12,7 @@ git clone https://github.com/adwognura/WebApp.git
 sudo apt install nodejs  
 sudo apt install npm
 npm install http-server -g
-
+Check polling webhook
 //check if nodejs and npm are installed
 node -v
 npm -v
