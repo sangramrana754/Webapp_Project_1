@@ -21,18 +21,12 @@ jobs:
         ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
 
     - name: Deploy Docker App
-      run: |
-        ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-          sudo apt update
-          sudo apt install -y docker.io git
+  run: |
+    ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+      sudo yum update
+      sudo yum install -y git
 
-          # Clone repo
-          rm -rf WebApp
-          git clone https://github.com/sangramrana754/New_Project.git
-          cd WebApp
-
-          # Build Docker image and run container
-          sudo docker build -t webapp .
-          sudo docker rm -f webapp-container || true
-          sudo docker run -d --name webapp-container -p 8080:8080 webapp
-        EOF
+      # Clone repo
+      rm -rf New_Project
+      git clone https://github.com/sangramrana754/New_Project.git
+      cd New_Project
